@@ -1,0 +1,892 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DB_MercyModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Categoires">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cat_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Cat_Des" Type="nvarchar(max)" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="Suppliers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Address" Type="nvarchar(max)" />
+          <Property Name="Categorie" Type="int" />
+          <Property Name="Detalies" Type="nvarchar(max)" />
+          <Property Name="IBAN" Type="nvarchar(max)" />
+          <Property Name="ALICI_PTT_HESAP_NO" Type="nvarchar(max)" />
+          <Property Name="ALICI_PTT_MUSTERI_NO" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="TB_Credit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Source" Type="nvarchar" MaxLength="25" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Note" Type="nvarchar(max)" />
+          <Property Name="Abut_Month" Type="nchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="TB_Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Emp_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Name_Ar" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Phone" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Email" Type="nvarchar" MaxLength="50" />
+          <Property Name="Emp_Zoho" Type="int" />
+          <Property Name="Emp_State" Type="nchar" MaxLength="10" />
+          <Property Name="ID_cat" Type="int" />
+          <Property Name="ALICI_PTT_HESAP_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="ALICI_PTT_MUSTERI_NO" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_Employee_Details">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Employee" Type="int" />
+          <Property Name="Time_Sheet" Type="varbinary(max)" />
+          <Property Name="Signature" Type="varbinary(max)" />
+          <Property Name="Contract" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Tb_expansess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Id_expanses" Type="int" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="Image" Type="image" />
+        </EntityType>
+        <EntityType Name="TB_Expensse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar(max)" />
+          <Property Name="Project" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="Tybe" Type="nvarchar" MaxLength="50" />
+          <Property Name="date" Type="date" />
+          <Property Name="Image" Type="image" />
+          <Property Name="detatils" Type="nvarchar(max)" />
+          <Property Name="Abut_Month" Type="nchar" MaxLength="12" />
+        </EntityType>
+        <EntityType Name="TB_Monthly_Report">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ID_Expansess" Type="int" />
+          <Property Name="ID_Salary" Type="int" />
+          <Property Name="ID_Credit" Type="int" />
+          <Property Name="SN" Type="nvarchar" MaxLength="15" />
+          <Property Name="QB" Type="nvarchar" MaxLength="50" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Name" Type="nvarchar" MaxLength="100" />
+          <Property Name="Debit" Type="float" />
+          <Property Name="Credit" Type="float" />
+          <Property Name="Postion" Type="nvarchar(max)" />
+          <Property Name="Project" Type="nvarchar" MaxLength="100" />
+          <Property Name="Caught" Type="nvarchar" MaxLength="15" />
+          <Property Name="Type" Type="nvarchar" MaxLength="15" />
+          <Property Name="Zoho" Type="int" />
+          <Property Name="Payroll" Type="nvarchar" MaxLength="15" />
+          <Property Name="Monthly" Type="nvarchar" MaxLength="15" />
+          <Property Name="Annual" Type="nvarchar" MaxLength="15" />
+          <Property Name="Link" Type="nvarchar(max)" />
+          <Property Name="Note" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Payment_Request">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="date" />
+          <Property Name="Due_Date" Type="date" />
+          <Property Name="Project_Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Funded_By" Type="nvarchar" MaxLength="50" />
+          <Property Name="PR#NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="Budget_line" Type="nvarchar" MaxLength="50" />
+          <Property Name="Type" Type="nvarchar" MaxLength="250" />
+          <Property Name="Currency" Type="nvarchar" MaxLength="50" />
+          <Property Name="Amount" Type="float" />
+          <Property Name="Reference_Number" Type="nvarchar" MaxLength="50" />
+          <Property Name="Payment_method" Type="nvarchar" MaxLength="50" />
+          <Property Name="Transfer_to" Type="nvarchar" MaxLength="50" />
+          <Property Name="PTT_Bank_Info" Type="nvarchar" MaxLength="50" />
+          <Property Name="MUSTERI_NO" Type="nvarchar" MaxLength="50" />
+          <Property Name="IBAN" Type="nvarchar" MaxLength="50" />
+          <Property Name="Status" Type="nvarchar" MaxLength="50" />
+          <Property Name="Payment_Date" Type="date" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+          <Property Name="Link_for_details" Type="nvarchar(max)" />
+          <Property Name="Reporting" Type="nvarchar" MaxLength="50" />
+          <Property Name="Add_By" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="TB_Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pro_Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pro_Des" Type="nvarchar" MaxLength="50" />
+          <Property Name="Pro_Date_Start" Type="date" />
+          <Property Name="Pro_Date_End" Type="date" />
+          <Property Name="Pro_URL" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Salary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Zoho" Type="int" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Position" Type="nvarchar" MaxLength="50" />
+          <Property Name="Gross" Type="float" />
+          <Property Name="Other_additions" Type="float" />
+          <Property Name="Transportation" Type="float" />
+          <Property Name="Other_deduction" Type="float" />
+          <Property Name="Net_Deu" Type="float" />
+          <Property Name="Project" Type="nvarchar" MaxLength="50" />
+          <Property Name="Payroll" Type="nchar" MaxLength="10" />
+          <Property Name="For_manth" Type="nchar" MaxLength="10" />
+          <Property Name="Preparation_date" Type="date" />
+          <Property Name="Currency" Type="nchar" MaxLength="10" />
+          <Property Name="Notes" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="TB_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FullName" Type="nvarchar" MaxLength="50" />
+          <Property Name="UserName" Type="nvarchar" MaxLength="50" />
+          <Property Name="Password" Type="nvarchar" MaxLength="50" />
+          <Property Name="Role" Type="nvarchar" MaxLength="50" />
+          <Property Name="DateT" Type="datetime" />
+        </EntityType>
+        <Association Name="FK_Suppliers_Categoires">
+          <End Role="Categoires" Type="Self.Categoires" Multiplicity="0..1" />
+          <End Role="Suppliers" Type="Self.Suppliers" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoires">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Suppliers">
+              <PropertyRef Name="Categorie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Employee_Categoires">
+          <End Role="Categoires" Type="Self.Categoires" Multiplicity="0..1" />
+          <End Role="TB_Employee" Type="Self.TB_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoires">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Employee">
+              <PropertyRef Name="ID_cat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Employee_Details_TB_Employee">
+          <End Role="TB_Employee" Type="Self.TB_Employee" Multiplicity="0..1" />
+          <End Role="TB_Employee_Details" Type="Self.TB_Employee_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Employee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Employee_Details">
+              <PropertyRef Name="ID_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Tb_expansess_TB_Expensse">
+          <End Role="TB_Expensse" Type="Self.TB_Expensse" Multiplicity="0..1" />
+          <End Role="Tb_expansess" Type="Self.Tb_expansess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Expensse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tb_expansess">
+              <PropertyRef Name="Id_expanses" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Monthly_Report_TB_Credit">
+          <End Role="TB_Credit" Type="Self.TB_Credit" Multiplicity="0..1" />
+          <End Role="TB_Monthly_Report" Type="Self.TB_Monthly_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Credit">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Monthly_Report">
+              <PropertyRef Name="ID_Credit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Monthly_Report_TB_Expensse">
+          <End Role="TB_Expensse" Type="Self.TB_Expensse" Multiplicity="0..1" />
+          <End Role="TB_Monthly_Report" Type="Self.TB_Monthly_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Expensse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Monthly_Report">
+              <PropertyRef Name="ID_Expansess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Monthly_Report_TB_Salary">
+          <End Role="TB_Salary" Type="Self.TB_Salary" Multiplicity="0..1" />
+          <End Role="TB_Monthly_Report" Type="Self.TB_Monthly_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Salary">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Monthly_Report">
+              <PropertyRef Name="ID_Salary" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_MercyModelStoreContainer">
+          <EntitySet Name="Categoires" EntityType="Self.Categoires" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Suppliers" EntityType="Self.Suppliers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Credit" EntityType="Self.TB_Credit" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Employee" EntityType="Self.TB_Employee" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Employee_Details" EntityType="Self.TB_Employee_Details" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Tb_expansess" EntityType="Self.Tb_expansess" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Expensse" EntityType="Self.TB_Expensse" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Monthly_Report" EntityType="Self.TB_Monthly_Report" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Payment_Request" EntityType="Self.TB_Payment_Request" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Project" EntityType="Self.TB_Project" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Salary" EntityType="Self.TB_Salary" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Users" EntityType="Self.TB_Users" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Suppliers_Categoires" Association="Self.FK_Suppliers_Categoires">
+            <End Role="Categoires" EntitySet="Categoires" />
+            <End Role="Suppliers" EntitySet="Suppliers" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Employee_Categoires" Association="Self.FK_TB_Employee_Categoires">
+            <End Role="Categoires" EntitySet="Categoires" />
+            <End Role="TB_Employee" EntitySet="TB_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Employee_Details_TB_Employee" Association="Self.FK_TB_Employee_Details_TB_Employee">
+            <End Role="TB_Employee" EntitySet="TB_Employee" />
+            <End Role="TB_Employee_Details" EntitySet="TB_Employee_Details" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Tb_expansess_TB_Expensse" Association="Self.FK_Tb_expansess_TB_Expensse">
+            <End Role="TB_Expensse" EntitySet="TB_Expensse" />
+            <End Role="Tb_expansess" EntitySet="Tb_expansess" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Monthly_Report_TB_Credit" Association="Self.FK_TB_Monthly_Report_TB_Credit">
+            <End Role="TB_Credit" EntitySet="TB_Credit" />
+            <End Role="TB_Monthly_Report" EntitySet="TB_Monthly_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Monthly_Report_TB_Expensse" Association="Self.FK_TB_Monthly_Report_TB_Expensse">
+            <End Role="TB_Expensse" EntitySet="TB_Expensse" />
+            <End Role="TB_Monthly_Report" EntitySet="TB_Monthly_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Monthly_Report_TB_Salary" Association="Self.FK_TB_Monthly_Report_TB_Salary">
+            <End Role="TB_Salary" EntitySet="TB_Salary" />
+            <End Role="TB_Monthly_Report" EntitySet="TB_Monthly_Report" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DB_MercyModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Categoire">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cat_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Cat_Des" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TB_Employee" Relationship="DB_MercyModel.FK_TB_Employee_Categoires" FromRole="Categoire" ToRole="TB_Employee" />
+          <NavigationProperty Name="Suppliers" Relationship="DB_MercyModel.FK_Suppliers_Categoires" FromRole="Categoire" ToRole="Supplier" />
+        </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <EntityType Name="TB_Credit">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Source" Type="String" MaxLength="25" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abut_Month" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="TB_Monthly_Report" Relationship="DB_MercyModel.FK_TB_Monthly_Report_TB_Credit" FromRole="TB_Credit" ToRole="TB_Monthly_Report" />
+        </EntityType>
+        <EntityType Name="Tb_expansess">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Id_expanses" Type="Int32" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TB_Expensse" Relationship="Self.FK_Tb_expansess_TB_Expensse" FromRole="Tb_expansess" ToRole="TB_Expensse" />
+        </EntityType>
+        <EntityType Name="TB_Expensse">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="Tybe" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="date" Type="DateTime" Precision="0" />
+          <Property Name="Image" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="detatils" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Abut_Month" Type="String" MaxLength="12" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="Tb_expansess" Relationship="Self.FK_Tb_expansess_TB_Expensse" FromRole="TB_Expensse" ToRole="Tb_expansess" />
+          <NavigationProperty Name="TB_Monthly_Report" Relationship="DB_MercyModel.FK_TB_Monthly_Report_TB_Expensse" FromRole="TB_Expensse" ToRole="TB_Monthly_Report" />
+        </EntityType>
+        <EntityType Name="TB_Project">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pro_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pro_Des" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Pro_Date_Start" Type="DateTime" Precision="0" />
+          <Property Name="Pro_Date_End" Type="DateTime" Precision="0" />
+          <Property Name="Pro_URL" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TB_Salary">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Zoho" Type="Int32" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Position" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Gross" Type="Double" />
+          <Property Name="Other_additions" Type="Double" />
+          <Property Name="Transportation" Type="Double" />
+          <Property Name="Other_deduction" Type="Double" />
+          <Property Name="Net_Deu" Type="Double" />
+          <Property Name="Project" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Payroll" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="For_manth" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Preparation_date" Type="DateTime" Precision="0" />
+          <Property Name="Currency" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TB_Monthly_Report" Relationship="DB_MercyModel.FK_TB_Monthly_Report_TB_Salary" FromRole="TB_Salary" ToRole="TB_Monthly_Report" />
+        </EntityType>
+        <Association Name="FK_Tb_expansess_TB_Expensse">
+          <End Role="TB_Expensse" Type="Self.TB_Expensse" Multiplicity="0..1" />
+          <End Role="Tb_expansess" Type="Self.Tb_expansess" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Expensse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Tb_expansess">
+              <PropertyRef Name="Id_expanses" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="DB_MercyEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Categoires" EntityType="Self.Categoire" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+          <EntitySet Name="TB_Credit" EntityType="Self.TB_Credit" />
+          <EntitySet Name="Tb_expansess" EntityType="Self.Tb_expansess" />
+          <EntitySet Name="TB_Expensse" EntityType="Self.TB_Expensse" />
+          <EntitySet Name="TB_Project" EntityType="Self.TB_Project" />
+          <EntitySet Name="TB_Salary" EntityType="Self.TB_Salary" />
+          <AssociationSet Name="FK_Tb_expansess_TB_Expensse" Association="Self.FK_Tb_expansess_TB_Expensse">
+            <End Role="TB_Expensse" EntitySet="TB_Expensse" />
+            <End Role="Tb_expansess" EntitySet="Tb_expansess" />
+          </AssociationSet>
+          <EntitySet Name="TB_Monthly_Report" EntityType="DB_MercyModel.TB_Monthly_Report" />
+          <AssociationSet Name="FK_TB_Monthly_Report_TB_Credit" Association="DB_MercyModel.FK_TB_Monthly_Report_TB_Credit">
+            <End Role="TB_Credit" EntitySet="TB_Credit" />
+            <End Role="TB_Monthly_Report" EntitySet="TB_Monthly_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Monthly_Report_TB_Expensse" Association="DB_MercyModel.FK_TB_Monthly_Report_TB_Expensse">
+            <End Role="TB_Expensse" EntitySet="TB_Expensse" />
+            <End Role="TB_Monthly_Report" EntitySet="TB_Monthly_Report" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Monthly_Report_TB_Salary" Association="DB_MercyModel.FK_TB_Monthly_Report_TB_Salary">
+            <End Role="TB_Salary" EntitySet="TB_Salary" />
+            <End Role="TB_Monthly_Report" EntitySet="TB_Monthly_Report" />
+          </AssociationSet>
+          <EntitySet Name="TB_Employee_Details" EntityType="DB_MercyModel.TB_Employee_Details" />
+          <EntitySet Name="TB_Employee" EntityType="DB_MercyModel.TB_Employee" />
+          <AssociationSet Name="FK_TB_Employee_Categoires" Association="DB_MercyModel.FK_TB_Employee_Categoires">
+            <End Role="Categoire" EntitySet="Categoires" />
+            <End Role="TB_Employee" EntitySet="TB_Employee" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Employee_Details_TB_Employee" Association="DB_MercyModel.FK_TB_Employee_Details_TB_Employee">
+            <End Role="TB_Employee" EntitySet="TB_Employee" />
+            <End Role="TB_Employee_Details" EntitySet="TB_Employee_Details" />
+          </AssociationSet>
+          <EntitySet Name="Suppliers" EntityType="DB_MercyModel.Supplier" />
+          <AssociationSet Name="FK_Suppliers_Categoires" Association="DB_MercyModel.FK_Suppliers_Categoires">
+            <End Role="Categoire" EntitySet="Categoires" />
+            <End Role="Supplier" EntitySet="Suppliers" />
+          </AssociationSet>
+          <EntitySet Name="TB_Users" EntityType="DB_MercyModel.TB_Users" />
+          <EntitySet Name="TB_Payment_Request" EntityType="DB_MercyModel.TB_Payment_Request" />
+          </EntityContainer>
+        <EntityType Name="TB_Monthly_Report">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Expansess" Type="Int32" />
+          <Property Name="ID_Salary" Type="Int32" />
+          <Property Name="ID_Credit" Type="Int32" />
+          <Property Name="SN" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="QB" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Debit" Type="Double" />
+          <Property Name="Credit" Type="Double" />
+          <Property Name="Postion" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Project" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Caught" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Zoho" Type="Int32" />
+          <Property Name="Payroll" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Monthly" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Annual" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+          <Property Name="Link" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Note" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="TB_Credit" Relationship="DB_MercyModel.FK_TB_Monthly_Report_TB_Credit" FromRole="TB_Monthly_Report" ToRole="TB_Credit" />
+          <NavigationProperty Name="TB_Expensse" Relationship="DB_MercyModel.FK_TB_Monthly_Report_TB_Expensse" FromRole="TB_Monthly_Report" ToRole="TB_Expensse" />
+          <NavigationProperty Name="TB_Salary" Relationship="DB_MercyModel.FK_TB_Monthly_Report_TB_Salary" FromRole="TB_Monthly_Report" ToRole="TB_Salary" />
+        </EntityType>
+        <Association Name="FK_TB_Monthly_Report_TB_Credit">
+          <End Type="DB_MercyModel.TB_Credit" Role="TB_Credit" Multiplicity="0..1" />
+          <End Type="DB_MercyModel.TB_Monthly_Report" Role="TB_Monthly_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Credit">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Monthly_Report">
+              <PropertyRef Name="ID_Credit" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Monthly_Report_TB_Expensse">
+          <End Type="DB_MercyModel.TB_Expensse" Role="TB_Expensse" Multiplicity="0..1" />
+          <End Type="DB_MercyModel.TB_Monthly_Report" Role="TB_Monthly_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Expensse">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Monthly_Report">
+              <PropertyRef Name="ID_Expansess" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Monthly_Report_TB_Salary">
+          <End Type="DB_MercyModel.TB_Salary" Role="TB_Salary" Multiplicity="0..1" />
+          <End Type="DB_MercyModel.TB_Monthly_Report" Role="TB_Monthly_Report" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Salary">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Monthly_Report">
+              <PropertyRef Name="ID_Salary" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_Employee_Details">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ID_Employee" Type="Int32" />
+          <Property Name="Time_Sheet" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Signature" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Contract" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <NavigationProperty Name="TB_Employee" Relationship="DB_MercyModel.FK_TB_Employee_Details_TB_Employee" FromRole="TB_Employee_Details" ToRole="TB_Employee" />
+        </EntityType>
+        <EntityType Name="TB_Employee">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Emp_Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Name_Ar" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Emp_Zoho" Type="Int32" />
+          <Property Name="Emp_State" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="ID_cat" Type="Int32" />
+          <NavigationProperty Name="Categoire" Relationship="DB_MercyModel.FK_TB_Employee_Categoires" FromRole="TB_Employee" ToRole="Categoire" />
+          <NavigationProperty Name="TB_Employee_Details" Relationship="DB_MercyModel.FK_TB_Employee_Details_TB_Employee" FromRole="TB_Employee" ToRole="TB_Employee_Details" />
+          <Property Name="ALICI_PTT_HESAP_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="ALICI_PTT_MUSTERI_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <Association Name="FK_TB_Employee_Categoires">
+          <End Type="DB_MercyModel.Categoire" Role="Categoire" Multiplicity="0..1" />
+          <End Type="DB_MercyModel.TB_Employee" Role="TB_Employee" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoire">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Employee">
+              <PropertyRef Name="ID_cat" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Employee_Details_TB_Employee">
+          <End Type="DB_MercyModel.TB_Employee" Role="TB_Employee" Multiplicity="0..1" />
+          <End Type="DB_MercyModel.TB_Employee_Details" Role="TB_Employee_Details" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Employee">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="TB_Employee_Details">
+              <PropertyRef Name="ID_Employee" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="Supplier">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Phone" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Address" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Categorie" Type="Int32" />
+          <Property Name="Detalies" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IBAN" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ALICI_PTT_HESAP_NO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ALICI_PTT_MUSTERI_NO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Categoire" Relationship="DB_MercyModel.FK_Suppliers_Categoires" FromRole="Supplier" ToRole="Categoire" />
+        </EntityType>
+        <Association Name="FK_Suppliers_Categoires">
+          <End Type="DB_MercyModel.Categoire" Role="Categoire" Multiplicity="0..1" />
+          <End Type="DB_MercyModel.Supplier" Role="Supplier" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Categoire">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Supplier">
+              <PropertyRef Name="Categorie" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_Users">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FullName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="UserName" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Role" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="DateT" Type="DateTime" Precision="3" />
+        </EntityType>
+        <EntityType Name="TB_Payment_Request">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Precision="0" />
+          <Property Name="Due_Date" Type="DateTime" Precision="0" />
+          <Property Name="Project_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Funded_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PR_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Budget_line" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Currency" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Amount" Type="Double" />
+          <Property Name="Reference_Number" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Payment_method" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Transfer_to" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="PTT_Bank_Info" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="MUSTERI_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="IBAN" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Status" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Payment_Date" Type="DateTime" Precision="0" />
+          <Property Name="Notes" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Link_for_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Reporting" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Add_By" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DB_MercyModelStoreContainer" CdmEntityContainer="DB_MercyEntities">
+          <EntitySetMapping Name="Categoires">
+            <EntityTypeMapping TypeName="DB_MercyModel.Categoire">
+              <MappingFragment StoreEntitySet="Categoires">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Cat_Name" ColumnName="Cat_Name" />
+                <ScalarProperty Name="Cat_Des" ColumnName="Cat_Des" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="DB_MercyModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Credit">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Credit">
+              <MappingFragment StoreEntitySet="TB_Credit">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Source" ColumnName="Source" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Abut_Month" ColumnName="Abut_Month" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Tb_expansess">
+            <EntityTypeMapping TypeName="DB_MercyModel.Tb_expansess">
+              <MappingFragment StoreEntitySet="Tb_expansess">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Id_expanses" ColumnName="Id_expanses" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Expensse">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Expensse">
+              <MappingFragment StoreEntitySet="TB_Expensse">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Tybe" ColumnName="Tybe" />
+                <ScalarProperty Name="date" ColumnName="date" />
+                <ScalarProperty Name="Image" ColumnName="Image" />
+                <ScalarProperty Name="detatils" ColumnName="detatils" />
+                <ScalarProperty Name="Abut_Month" ColumnName="Abut_Month" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Project">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Project">
+              <MappingFragment StoreEntitySet="TB_Project">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Pro_Name" ColumnName="Pro_Name" />
+                <ScalarProperty Name="Pro_Des" ColumnName="Pro_Des" />
+                <ScalarProperty Name="Pro_Date_Start" ColumnName="Pro_Date_Start" />
+                <ScalarProperty Name="Pro_Date_End" ColumnName="Pro_Date_End" />
+                <ScalarProperty Name="Pro_URL" ColumnName="Pro_URL" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Salary">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Salary">
+              <MappingFragment StoreEntitySet="TB_Salary">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Zoho" ColumnName="Zoho" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Position" ColumnName="Position" />
+                <ScalarProperty Name="Gross" ColumnName="Gross" />
+                <ScalarProperty Name="Other_additions" ColumnName="Other_additions" />
+                <ScalarProperty Name="Transportation" ColumnName="Transportation" />
+                <ScalarProperty Name="Other_deduction" ColumnName="Other_deduction" />
+                <ScalarProperty Name="Net_Deu" ColumnName="Net_Deu" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Payroll" ColumnName="Payroll" />
+                <ScalarProperty Name="For_manth" ColumnName="For_manth" />
+                <ScalarProperty Name="Preparation_date" ColumnName="Preparation_date" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Monthly_Report">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Monthly_Report">
+              <MappingFragment StoreEntitySet="TB_Monthly_Report">
+                <ScalarProperty Name="Note" ColumnName="Note" />
+                <ScalarProperty Name="Link" ColumnName="Link" />
+                <ScalarProperty Name="Annual" ColumnName="Annual" />
+                <ScalarProperty Name="Monthly" ColumnName="Monthly" />
+                <ScalarProperty Name="Payroll" ColumnName="Payroll" />
+                <ScalarProperty Name="Zoho" ColumnName="Zoho" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Caught" ColumnName="Caught" />
+                <ScalarProperty Name="Project" ColumnName="Project" />
+                <ScalarProperty Name="Postion" ColumnName="Postion" />
+                <ScalarProperty Name="Credit" ColumnName="Credit" />
+                <ScalarProperty Name="Debit" ColumnName="Debit" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="QB" ColumnName="QB" />
+                <ScalarProperty Name="SN" ColumnName="SN" />
+                <ScalarProperty Name="ID_Credit" ColumnName="ID_Credit" />
+                <ScalarProperty Name="ID_Salary" ColumnName="ID_Salary" />
+                <ScalarProperty Name="ID_Expansess" ColumnName="ID_Expansess" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Employee_Details">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Employee_Details">
+              <MappingFragment StoreEntitySet="TB_Employee_Details">
+                <ScalarProperty Name="Contract" ColumnName="Contract" />
+                <ScalarProperty Name="Signature" ColumnName="Signature" />
+                <ScalarProperty Name="Time_Sheet" ColumnName="Time_Sheet" />
+                <ScalarProperty Name="ID_Employee" ColumnName="ID_Employee" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Employee">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Employee">
+              <MappingFragment StoreEntitySet="TB_Employee">
+                <ScalarProperty Name="ALICI_PTT_MUSTERI_NO" ColumnName="ALICI_PTT_MUSTERI_NO" />
+                <ScalarProperty Name="ALICI_PTT_HESAP_NO" ColumnName="ALICI_PTT_HESAP_NO" />
+                <ScalarProperty Name="ID_cat" ColumnName="ID_cat" />
+                <ScalarProperty Name="Emp_State" ColumnName="Emp_State" />
+                <ScalarProperty Name="Emp_Zoho" ColumnName="Emp_Zoho" />
+                <ScalarProperty Name="Emp_Email" ColumnName="Emp_Email" />
+                <ScalarProperty Name="Emp_Phone" ColumnName="Emp_Phone" />
+                <ScalarProperty Name="Emp_Name_Ar" ColumnName="Emp_Name_Ar" />
+                <ScalarProperty Name="Emp_Name" ColumnName="Emp_Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Suppliers">
+            <EntityTypeMapping TypeName="DB_MercyModel.Supplier">
+              <MappingFragment StoreEntitySet="Suppliers">
+                <ScalarProperty Name="ALICI_PTT_MUSTERI_NO" ColumnName="ALICI_PTT_MUSTERI_NO" />
+                <ScalarProperty Name="ALICI_PTT_HESAP_NO" ColumnName="ALICI_PTT_HESAP_NO" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="Detalies" ColumnName="Detalies" />
+                <ScalarProperty Name="Categorie" ColumnName="Categorie" />
+                <ScalarProperty Name="Address" ColumnName="Address" />
+                <ScalarProperty Name="Email" ColumnName="Email" />
+                <ScalarProperty Name="Phone" ColumnName="Phone" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Users">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Users">
+              <MappingFragment StoreEntitySet="TB_Users">
+                <ScalarProperty Name="DateT" ColumnName="DateT" />
+                <ScalarProperty Name="Role" ColumnName="Role" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="FullName" ColumnName="FullName" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Payment_Request">
+            <EntityTypeMapping TypeName="DB_MercyModel.TB_Payment_Request">
+              <MappingFragment StoreEntitySet="TB_Payment_Request">
+                <ScalarProperty Name="Add_By" ColumnName="Add_By" />
+                <ScalarProperty Name="Reporting" ColumnName="Reporting" />
+                <ScalarProperty Name="Link_for_details" ColumnName="Link_for_details" />
+                <ScalarProperty Name="Notes" ColumnName="Notes" />
+                <ScalarProperty Name="Payment_Date" ColumnName="Payment_Date" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IBAN" ColumnName="IBAN" />
+                <ScalarProperty Name="MUSTERI_NO" ColumnName="MUSTERI_NO" />
+                <ScalarProperty Name="PTT_Bank_Info" ColumnName="PTT_Bank_Info" />
+                <ScalarProperty Name="Transfer_to" ColumnName="Transfer_to" />
+                <ScalarProperty Name="Payment_method" ColumnName="Payment_method" />
+                <ScalarProperty Name="Reference_Number" ColumnName="Reference_Number" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Currency" ColumnName="Currency" />
+                <ScalarProperty Name="Type" ColumnName="Type" />
+                <ScalarProperty Name="Budget_line" ColumnName="Budget_line" />
+                <ScalarProperty Name="PR_NO" ColumnName="PR#NO" />
+                <ScalarProperty Name="Funded_By" ColumnName="Funded_By" />
+                <ScalarProperty Name="Project_Name" ColumnName="Project_Name" />
+                <ScalarProperty Name="Due_Date" ColumnName="Due_Date" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

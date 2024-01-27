@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="242586b8ebf642bd9a1b9a2931cb505d" Name="Diagram1" ZoomLevel="53">
+        <EntityTypeShape EntityType="DB_MercyModel.Categoire" Width="1.5" PointX="8.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_MercyModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Credit" Width="1.5" PointX="3.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_MercyModel.Tb_expansess" Width="1.5" PointX="3" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Expensse" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Project" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Salary" Width="1.5" PointX="3.75" PointY="8" IsExpanded="true" />
+        <AssociationConnector Association="DB_MercyModel.FK_Tb_expansess_TB_Expensse" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Monthly_Report" Width="1.5" PointX="6.625" PointY="4.125" />
+        <AssociationConnector Association="DB_MercyModel.FK_TB_Monthly_Report_TB_Credit" />
+        <AssociationConnector Association="DB_MercyModel.FK_TB_Monthly_Report_TB_Expensse" />
+        <AssociationConnector Association="DB_MercyModel.FK_TB_Monthly_Report_TB_Salary" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Employee_Details" Width="1.5" PointX="13.25" PointY="4.75" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Employee" Width="1.5" PointX="11" PointY="4.625" />
+        <AssociationConnector Association="DB_MercyModel.FK_TB_Employee_Categoires" />
+        <AssociationConnector Association="DB_MercyModel.FK_TB_Employee_Details_TB_Employee" />
+        <EntityTypeShape EntityType="DB_MercyModel.Supplier" Width="1.5" PointX="11" PointY="0.75" />
+        <AssociationConnector Association="DB_MercyModel.FK_Suppliers_Categoires" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Users" Width="1.5" PointX="9.375" PointY="8.75" />
+        <EntityTypeShape EntityType="DB_MercyModel.TB_Payment_Request" Width="1.5" PointX="16.5" PointY="1.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

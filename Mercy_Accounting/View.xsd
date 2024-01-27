@@ -1,0 +1,139 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="View" targetNamespace="http://tempuri.org/View.xsd" xmlns:mstns="http://tempuri.org/View.xsd" xmlns="http://tempuri.org/View.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="DB_MercyConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="DB_MercyConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.Mercy_Accounting.Properties.Settings.GlobalReference.Default.DB_MercyConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_expansessTableAdapter" GeneratorDataComponentClassName="View_expansessTableAdapter" Name="View_expansess" UserDataComponentName="View_expansessTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_MercyConnectionString (Settings)" DbObjectName="DB_Mercy.dbo.View_expansess" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [Name]
+      ,[Position]
+      ,[Project]
+      ,[Amount]
+      ,[Number]
+      ,[date]
+      ,[Abut_Month]
+  FROM [DB_Mercy].[dbo].[View_expansess]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="Position" DataSetColumn="Position" />
+              <Mapping SourceColumn="Project" DataSetColumn="Project" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="date" DataSetColumn="date" />
+              <Mapping SourceColumn="Abut_Month" DataSetColumn="Abut_Month" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_DetalisTableAdapter" GeneratorDataComponentClassName="View_DetalisTableAdapter" Name="View_Detalis" UserDataComponentName="View_DetalisTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="DB_MercyConnectionString (Settings)" DbObjectName="DB_Mercy.dbo.View_Detalis" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT [Number]
+      ,[Amount]
+      ,[Name]
+      ,[ID]
+  FROM [DB_Mercy].[dbo].[View_Detalis]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Number" DataSetColumn="Number" />
+              <Mapping SourceColumn="Amount" DataSetColumn="Amount" />
+              <Mapping SourceColumn="Name" DataSetColumn="Name" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="View" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="View" msprop:Generator_UserDSName="View">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="View_expansess" msprop:Generator_TableClassName="View_expansessDataTable" msprop:Generator_TableVarName="tableView_expansess" msprop:Generator_TablePropName="View_expansess" msprop:Generator_RowDeletingName="View_expansessRowDeleting" msprop:Generator_RowChangingName="View_expansessRowChanging" msprop:Generator_RowEvHandlerName="View_expansessRowChangeEventHandler" msprop:Generator_RowDeletedName="View_expansessRowDeleted" msprop:Generator_UserTableName="View_expansess" msprop:Generator_RowChangedName="View_expansessRowChanged" msprop:Generator_RowEvArgName="View_expansessRowChangeEvent" msprop:Generator_RowClassName="View_expansessRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Position" msprop:Generator_ColumnVarNameInTable="columnPosition" msprop:Generator_ColumnPropNameInRow="Position" msprop:Generator_ColumnPropNameInTable="PositionColumn" msprop:Generator_UserColumnName="Position" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2147483647" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Project" msprop:Generator_ColumnVarNameInTable="columnProject" msprop:Generator_ColumnPropNameInRow="Project" msprop:Generator_ColumnPropNameInTable="ProjectColumn" msprop:Generator_UserColumnName="Project" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:double" minOccurs="0" />
+              <xs:element name="Number" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:int" />
+              <xs:element name="date" msprop:Generator_ColumnVarNameInTable="columndate" msprop:Generator_ColumnPropNameInRow="date" msprop:Generator_ColumnPropNameInTable="dateColumn" msprop:Generator_UserColumnName="date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="Abut_Month" msprop:Generator_ColumnVarNameInTable="columnAbut_Month" msprop:Generator_ColumnPropNameInRow="Abut_Month" msprop:Generator_ColumnPropNameInTable="Abut_MonthColumn" msprop:Generator_UserColumnName="Abut_Month" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="12" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="View_Detalis" msprop:Generator_TableClassName="View_DetalisDataTable" msprop:Generator_TableVarName="tableView_Detalis" msprop:Generator_TablePropName="View_Detalis" msprop:Generator_RowDeletingName="View_DetalisRowDeleting" msprop:Generator_RowChangingName="View_DetalisRowChanging" msprop:Generator_RowEvHandlerName="View_DetalisRowChangeEventHandler" msprop:Generator_RowDeletedName="View_DetalisRowDeleted" msprop:Generator_UserTableName="View_Detalis" msprop:Generator_RowChangedName="View_DetalisRowChanged" msprop:Generator_RowEvArgName="View_DetalisRowChangeEvent" msprop:Generator_RowClassName="View_DetalisRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Number" msprop:Generator_ColumnVarNameInTable="columnNumber" msprop:Generator_ColumnPropNameInRow="Number" msprop:Generator_ColumnPropNameInTable="NumberColumn" msprop:Generator_UserColumnName="Number" type="xs:int" minOccurs="0" />
+              <xs:element name="Amount" msprop:Generator_ColumnVarNameInTable="columnAmount" msprop:Generator_ColumnPropNameInRow="Amount" msprop:Generator_ColumnPropNameInTable="AmountColumn" msprop:Generator_UserColumnName="Amount" type="xs:double" minOccurs="0" />
+              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_expansess" />
+      <xs:field xpath="mstns:Number" />
+    </xs:unique>
+    <xs:unique name="View_Detalis_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:View_Detalis" />
+      <xs:field xpath="mstns:ID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="Detalis" msdata:parent="View_expansess" msdata:child="View_Detalis" msdata:parentkey="Number" msdata:childkey="Number" msprop:Generator_UserChildTable="View_Detalis" msprop:Generator_ChildPropName="GetView_DetalisRows" msprop:Generator_UserRelationName="Detalis" msprop:Generator_ParentPropName="View_expansessRow" msprop:Generator_RelationVarName="relationDetalis" msprop:Generator_UserParentTable="View_expansess" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>

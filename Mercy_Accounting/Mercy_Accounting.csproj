@@ -1,0 +1,501 @@
+﻿<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{208BA0C4-C728-4FD3-9E86-5C3C1628E316}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Mercy_Accounting</RootNamespace>
+    <AssemblyName>Mercy_Accounting</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x64'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x64\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x64'">
+    <OutputPath>bin\x64\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x64</PlatformTarget>
+    <LangVersion>7.3</LangVersion>
+    <ErrorReport>prompt</ErrorReport>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DevExpress.BonusSkins.v23.1" />
+    <Reference Include="DevExpress.CodeParser.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.Desktop.v23.1" />
+    <Reference Include="DevExpress.Drawing.v23.1" />
+    <Reference Include="DevExpress.Data.v23.1" />
+    <Reference Include="DevExpress.DataAccess.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v23.1.UI, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Diagram.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Pdf.v23.1.Drawing, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v23.1.Core" />
+    <Reference Include="DevExpress.Office.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v23.1.Core, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v23.1" />
+    <Reference Include="DevExpress.Utils.v23.1.UI, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v23.1" />
+    <Reference Include="DevExpress.Sparkline.v23.1.Core" />
+    <Reference Include="DevExpress.XtraDiagram.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v23.1" />
+    <Reference Include="DevExpress.XtraGrid.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPdfViewer.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeList.v23.1, Version=23.1.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Categoire.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Class\Method.cs" />
+    <Compile Include="Form 2\Export_Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form 2\Export_Excel.Designer.cs">
+      <DependentUpon>Export_Excel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form 2\Show_pdf.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form 2\Show_pdf.Designer.cs">
+      <DependentUpon>Show_pdf.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Categreis.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Categreis.designer.cs">
+      <DependentUpon>Add_Categreis.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Credit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Credit.designer.cs">
+      <DependentUpon>Add_Credit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Credit_Month.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Credit_Month.designer.cs">
+      <DependentUpon>Add_Credit_Month.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Employee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Employee.designer.cs">
+      <DependentUpon>Add_Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Expansess.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Expansess.designer.cs">
+      <DependentUpon>Add_Expansess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Expansess_Details.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Expansess_Details.designer.cs">
+      <DependentUpon>Add_Expansess_Details.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Expansess_Month.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Expansess_Month.designer.cs">
+      <DependentUpon>Add_Expansess_Month.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Linke.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Linke.Designer.cs">
+      <DependentUpon>Add_Linke.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Payment_Request.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Payment_Request.Designer.cs">
+      <DependentUpon>Add_Payment_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Payroll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Payroll.designer.cs">
+      <DependentUpon>Add_Payroll.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Payroll_Report.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Payroll_Report.Designer.cs">
+      <DependentUpon>Add_Payroll_Report.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Project.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Project.designer.cs">
+      <DependentUpon>Add_Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Salary.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Salary.designer.cs">
+      <DependentUpon>Add_Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Add_Suppliers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Add_Suppliers.designer.cs">
+      <DependentUpon>Add_Suppliers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\AShow_link.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\AShow_link.Designer.cs">
+      <DependentUpon>AShow_link.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Category.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Category.Designer.cs">
+      <DependentUpon>Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Credit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Credit.Designer.cs">
+      <DependentUpon>Credit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Employee.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Employee.Designer.cs">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Expansess.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Expansess.Designer.cs">
+      <DependentUpon>Expansess.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\FRM_Start.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\FRM_Start.designer.cs">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Payment_Request.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Payment_Request.Designer.cs">
+      <DependentUpon>Payment_Request.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Project.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Project.Designer.cs">
+      <DependentUpon>Project.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Report_monthly.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Report_monthly.Designer.cs">
+      <DependentUpon>Report_monthly.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Salary.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Salary.Designer.cs">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Supplier.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Supplier.Designer.cs">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form\Users.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Form\Users.Designer.cs">
+      <DependentUpon>Users.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Supplier.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Credit.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Employee_Details.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Tb_expansess.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Expensse.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Monthly_Report.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Payment_Request.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Project.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Salary.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Users.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="View.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>View.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Form 2\Export_Excel.resx">
+      <DependentUpon>Export_Excel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form 2\Show_pdf.resx">
+      <DependentUpon>Show_pdf.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Categreis.resx">
+      <DependentUpon>Add_Categreis.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Credit.resx">
+      <DependentUpon>Add_Credit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Credit_Month.resx">
+      <DependentUpon>Add_Credit_Month.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Employee.resx">
+      <DependentUpon>Add_Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Expansess.resx">
+      <DependentUpon>Add_Expansess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Expansess_Details.resx">
+      <DependentUpon>Add_Expansess_Details.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Expansess_Month.resx">
+      <DependentUpon>Add_Expansess_Month.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Linke.resx">
+      <DependentUpon>Add_Linke.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Payment_Request.resx">
+      <DependentUpon>Add_Payment_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Payroll.resx">
+      <DependentUpon>Add_Payroll.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Payroll_Report.resx">
+      <DependentUpon>Add_Payroll_Report.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Project.resx">
+      <DependentUpon>Add_Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Salary.resx">
+      <DependentUpon>Add_Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Add_Suppliers.resx">
+      <DependentUpon>Add_Suppliers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\AShow_link.resx">
+      <DependentUpon>AShow_link.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Category.resx">
+      <DependentUpon>Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Credit.resx">
+      <DependentUpon>Credit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Employee.resx">
+      <DependentUpon>Employee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Expansess.resx">
+      <DependentUpon>Expansess.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\FRM_Start.resx">
+      <DependentUpon>FRM_Start.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Payment_Request.resx">
+      <DependentUpon>Payment_Request.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Project.resx">
+      <DependentUpon>Project.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Report_monthly.resx">
+      <DependentUpon>Report_monthly.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Salary.resx">
+      <DependentUpon>Salary.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Supplier.resx">
+      <DependentUpon>Supplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form\Users.resx">
+      <DependentUpon>Users.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\licenses.licx" />
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="View.xsc">
+      <DependentUpon>View.xsd</DependentUpon>
+    </None>
+    <None Include="View.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>View.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="View.xss">
+      <DependentUpon>View.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
